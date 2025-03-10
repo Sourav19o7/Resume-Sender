@@ -1,0 +1,191 @@
+/* Custom styles to enhance Tailwind */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* Chat container and messages */
+#chat-container {
+    padding-bottom: 100px;
+    scroll-behavior: smooth;
+}
+
+.message-bubble {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    word-break: break-word;
+}
+
+.message-bubble.bot {
+    border-left: 3px solid #3b82f6;
+}
+
+.message-bubble.user {
+    border-right: 3px solid #8b5cf6;
+    background: #3b3b4f;
+}
+
+.user-message {
+    animation: slideInRight 0.3s ease;
+}
+
+.bot-message {
+    animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Typing animation */
+.typing-indicator {
+    display: flex;
+    padding: 12px 16px;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: bounce 1.3s linear infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Code block styling */
+pre {
+    background-color: #1a1a2e;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    position: relative;
+}
+
+pre code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Code copy button */
+.code-copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.code-copy-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+}
+
+/* Light mode overrides */
+.light-mode {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.light-mode header {
+    border-color: #e5e7eb;
+}
+
+.light-mode .message-bubble.bot {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+.light-mode .message-bubble.user {
+    background-color: #ddd6fe;
+    color: #1f2937;
+}
+
+.light-mode #user-input {
+    background-color: white;
+    border-color: #e5e7eb;
+    color: #1f2937;
+}
+
+.light-mode .suggestion {
+    border-color: #e5e7eb;
+    color: #6b7280;
+}
+
+.light-mode .suggestion:hover {
+    background-color: #f9fafb;
+}
+
+.light-mode ::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
