@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AI Chatbot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-900 text-gray-100 h-screen flex flex-col overflow-hidden">
     <header class="border-b border-gray-800 py-4 px-6">
         <div class="flex items-center justify-between max-w-6xl mx-auto">
             <div class="flex items-center space-x-2">
@@ -23,8 +23,8 @@
         </div>
     </header>
 
-    <main class="flex-1 overflow-hidden flex flex-col max-w-6xl w-full mx-auto">
-        <div id="chat-container" class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+    <main class="flex flex-col h-screen max-w-6xl w-full mx-auto">
+        <div id="chat-container" class="flex-1 overflow-y-auto px-4 py-6 space-y-6 pb-32">
             <!-- Chat messages will appear here -->
             <div class="bot-message">
                 <div class="flex items-start gap-3">
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 p-4 w-full max-w-6xl mx-auto">
+        <div class="border-t border-gray-800 p-4 w-full max-w-6xl mx-auto bg-gray-900 sticky bottom-0 z-10 shadow-lg">
             <div class="flex items-center gap-2">
                 <form id="chat-form" class="flex-1 flex items-center gap-2">
                     <input 

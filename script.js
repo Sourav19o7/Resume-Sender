@@ -120,7 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Automatically scroll to the bottom of the chat
     const scrollToBottom = () => {
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+        setTimeout(() => {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 100); // Small delay to ensure DOM is updated
     };
 
     // Show loading indicator
@@ -223,6 +225,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
     };
+    
+    // Make sure the input stays visible when virtual keyboard appears on mobile
+    const handleResize = () => {
+        // Scroll to the bottom of chat whenever resizing happens
+        scrollToBottom();
+        
+        // On mobile, make sure the view stays anchored to the input
+        if (window.innerWidth <= 768) {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    };
+    
+    window.addEventListener('resize', handleResize);
 
     // Initialize the app
     initializeConnection();
